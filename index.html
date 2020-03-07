@@ -18,12 +18,30 @@
 <main class="container">
     <div class="row">
         <div class="col-lg-9 col-sm-12 quiz">
+            <div class="row">
             <h4>Code Quiz Challenge</h4>
+            <div class="row container bg-info question">
+                <p id="question">Question goes here</p>
+            </div>
+            <div class="row container choice">
+                <button type="button" class="btn btn-outline-success btn-block"  id="btn0"><span id="ans0"></span></button>
+                <button type="button" class="btn btn-outline-success btn-block"  id="btn1"><span id="ans1"></span></button>
+                <button type="button" class="btn btn-outline-success btn-block"  id="btn2"><span id="ans2"></span></button>
+                <button type="button" class="btn btn-outline-success btn-block"  id="btn3"><span id="ans3"></span></button>
+            </div>
+            </div>
+            
+            
+            <div class="row container progress">
+                <div class="progress-bar" id="progbar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
 
-            <p id="question"></p>
+            <div>
+            <button type="button" id="start">Start</button>
+            <button id="deduct" onclick="test()">Deduct</button>
 
-            <button id="start">Start</button>
-            <button id="deduct" onclick="deduct()">Deduct</button>
+            </div>
+            
         </div>
 
 
