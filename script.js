@@ -1,6 +1,6 @@
 var start = document.querySelector("#start");
 var timedisp = document.querySelector("#display");
-var button = document.querySelector("button");
+var button = document.querySelector(".choice");
 
 
 //Timer
@@ -33,7 +33,7 @@ var q = {
 }
 //populate Q & option
 var i = 0;
-button.addEventListener("click",function test(){
+    button.addEventListener("click",function test(){
     document.getElementById("question").innerHTML = q.Question[i];
     document.getElementById("ans0").innerHTML = q.option[i][0];
     document.getElementById("ans1").innerHTML = q.option[i][1];
