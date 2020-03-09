@@ -1,13 +1,24 @@
 
 *{box-sizing: border-box;}
 
+#ask{
+    display: none;
+}
 
-
+#end{
+    display: none;
+}
 .container{
-    margin-top: 1%;
-    margin-bottom: 1%;
+    /*margin-top: 1%;
+    margin-bottom: 1%;*/
     width: 100%;
     padding: 1em;
+    /*min-height: 20px;*/
+    
+}
+
+.btn{
+    margin-top: 2%;
 }
 
 footer{
