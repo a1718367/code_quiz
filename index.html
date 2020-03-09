@@ -26,8 +26,8 @@
             <h4>Code Quiz Challenge</h4>
 
             <!--landing page-->
-            <div class="row container" id="home">
-                
+            <div class="row" id="home">
+                <div class="container">
                     <h5>Welcome to the code quiz Challenge</h5>
                     <h6>Rules of the Game :</h6>
                     <ul>
@@ -38,26 +38,27 @@
                     </ul>
                     <p>Press the Start button to commence</p>
                 
+                </div>
                 
             </div>
 
             <!--Question-->
             <div class="row container" id="ask">
-            <div class="row question">
+            <div class="row container question">
                 <h5 id="question">Question goes here</h5>
             </div>
-            <div class="row choice">
+            <div class="row container choice">
                 <button type="button" class="btn btn-outline-success btn-block"  id="btn0"><span id="ans0">1</span></button>
                 <button type="button" class="btn btn-outline-success btn-block"  id="btn1"><span id="ans1">2</span></button>
                 <button type="button" class="btn btn-outline-success btn-block"  id="btn2"><span id="ans2">3</span></button>
                 <button type="button" class="btn btn-outline-success btn-block"  id="btn3"><span id="ans3">4</span></button>
-                <div class="font-weight-light container" id="feedback"></div>
+                <div class="font-weight-light row" id="feedback"></div>
             </div>
             </div>
             
             <!--End-->
             <div class="row container" id="end">
-                <div class="row container question">
+                <div class="row container">
                     <h5>Your Score is: <span id="score"></span></h5>
                 </div>
                 <div class="row container choice">
@@ -66,7 +67,7 @@
                         <div>
                         <button type="button" class="btn btn-secondary" id="save">Save Your Score</button>
                         <button type="button" class="btn btn-secondary" id="remove">Remove High Score</button>
-                        <button type="button" class="btn btn-secondary" id="retry">Re-try</button>
+                        <button type="button" class="btn btn-secondary" id="remove">Re-try</button>
                     </div>
                     </div>
                     
@@ -80,8 +81,8 @@
             </div>
 
             <div>
-            <button type="button" class="btn btn-secondary" id="start">Start</button>
-            <!--<button id="deduct" onclick="test()">Deduct</button>-->
+            <button type="button" class = "btn btn-secondary" id="start">Start</button>
+           <!-- <button id="deduct" onclick="test()">Deduct</button>-->
             <h4>Time Remaining: <span id="display">60</span></h4>
             </div>
             
