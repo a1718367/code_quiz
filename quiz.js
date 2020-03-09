@@ -33,7 +33,7 @@ var q = [
 
 var i = 0
 var score = 0
-var num1 = 10;
+var num1 = 60;
 populate(i);
 
     
@@ -70,7 +70,7 @@ startbtn.addEventListener("click", function(){
     startbtn.disabled = true;
     var x = setInterval(()=>{
     
-    if(i<q.length && num1 >= 0){
+    if(i<q.length && num1 > 0){
         num1--;
         timedisp.textContent = num1;
     }else{
