@@ -2,6 +2,13 @@ var start = document.querySelector("#start");
 var timedisp = document.querySelector("#display");
 var button = document.querySelector(".choice");
 
+var a = document.getElementById("btn0");
+var b = document.getElementById("btn1");
+var c = document.getElementById("btn2");
+var d = document.getElementById("btn3");
+
+
+
 
 //Timer
 var num1 = 60;
@@ -38,6 +45,11 @@ var i = 0;
     document.getElementById("ans0").innerHTML = q.option[i][0];
     document.getElementById("ans1").innerHTML = q.option[i][1];
     document.getElementById("ans2").innerHTML = q.option[i][2];
-    document.getElementById("ans3").innerHTML = q.option[i][2];
+    document.getElementById("ans3").innerHTML = q.option[i][3];
+    
     i++;
+    console.log(i)
+    
 })
+
+
