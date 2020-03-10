@@ -1,13 +1,10 @@
 
 *{box-sizing: border-box;}
 
-#ask{
+#ask, #end, #hscore{
     display: none;
 }
 
-#end{
-    display: none;
-}
 .container{
     /*margin-top: 1%;
     margin-bottom: 1%;*/

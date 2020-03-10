@@ -52,7 +52,7 @@
                 <button type="button" class="btn btn-outline-success btn-block"  id="btn1"><span id="ans1">2</span></button>
                 <button type="button" class="btn btn-outline-success btn-block"  id="btn2"><span id="ans2">3</span></button>
                 <button type="button" class="btn btn-outline-success btn-block"  id="btn3"><span id="ans3">4</span></button>
-                <div class="font-weight-light row" id="feedback"></div>
+                <div class="font-weight-light row container" id="feedback"></div>
             </div>
             </div>
             
@@ -62,18 +62,33 @@
                     <h5>Your Score is: <span id="score"></span></h5>
                 </div>
                 <div class="row container choice">
-                    <div><input type="text" class="form-control" placeholder="Your initial" id="User">
+                    <div>
+                        <h5>Please enter your name to proceed</h5>
+                        <input type="text" class="form-control" onfocus="this.value=''" onkeyup="validate()" placeholder="Your Name" id="user">
                     
                         <div>
                         <button type="button" class="btn btn-secondary" id="save">Save Your Score</button>
-                        <button type="button" class="btn btn-secondary" id="remove">Remove High Score</button>
-                        <button type="button" class="btn btn-secondary" id="remove">Re-try</button>
-                    </div>
+                        
+                    
+                        </div>
                     </div>
                     
                 </div>
+            </div>
+            <!--Highscore-->
+            <div class="row" id="hscore">
+                <div class="container">
+                    <h5>High Scores</h5>
+                    <ol id="topscore">
+                    </ol>
+                    <button type="button" class="btn btn-secondary" id="remove">Remove High Score</button>
+                    <p>Press the Start button to retry</p>
+                
                 </div>
+                
+            </div>
 
+                
             <!--Feedback-->
             
             <div class="row container progress">
@@ -82,7 +97,6 @@
 
             <div>
             <button type="button" class = "btn btn-secondary" id="start">Start</button>
-           <!-- <button id="deduct" onclick="test()">Deduct</button>-->
             <h4>Time Remaining: <span id="display">60</span></h4>
             </div>
             

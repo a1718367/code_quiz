@@ -6,12 +6,15 @@ var ask = document.querySelector("#ask");
 var end = document.querySelector("#end");
 var feedback = document.querySelector("#feedback");
 var mark = document.querySelector("#score");
+var playerInput = document.querySelector("#user");
+
 
 var a = document.getElementById("btn0");
 var b = document.getElementById("btn1");
 var c = document.getElementById("btn2");
 var d = document.getElementById("btn3");
 var save = document.getElementById("save");
+var del = document.getElementById("remove");
 
 var q = [
     {question: "Inside which HTML element do we put the JavaScript?",
@@ -41,17 +44,17 @@ a.addEventListener("click",function(){pick = 0;chkans(pick,i);i+=1;populate(i)})
 b.addEventListener("click",function(){pick = 1;chkans(pick,i);i+=1;populate(i)});
 c.addEventListener("click",function(){pick = 2;chkans(pick,i);i+=1;populate(i)});
 d.addEventListener("click",function(){pick = 3;chkans(pick,i);i+=1;populate(i)});
-//save,addEventListener("click",function(){save()});
+save.addEventListener("click",function(){highscore()});
+del.addEventListener("click",function(){localStorage.clear("highscore")});
        
 //evaluate response - 
 function chkans(pick,i){
 if(i<q.length){
 var pickans = q[i].choise[pick];
-if(pickans == q[i].ans){correct();feedback.textContent = "Correct";}else{deduct();feedback.textContent = "Wrong"}
+if(pickans == q[i].ans){score +=1 ;feedback.textContent = "Correct";}else{num1 -= 5;feedback.textContent = "Wrong"}
 }else{return}}
 
 //populate question & options
-
 function populate(j){
     if(j<q.length){
     document.getElementById("question").textContent = q[j].question;
@@ -75,37 +78,75 @@ startbtn.addEventListener("click", function(){
         timedisp.textContent = num1;
     }else{
         clearInterval(x);
-        timedisp.textContent = 0;
+        timedisp.textContent == 0;
         finish();
     }
 },1000);
 start();
 })
 
-//time penalty
-function deduct(){
-    num1 -= 5;
-}
 
 //start quiz hide home and diaplay question
 function start(){
+    i = 0
+    score = 0
+    num1 = 60;
+    populate(i);
     home.style.display = 'none';
+    end.style.display = 'none';
+    hscore.style.display = 'none';
     ask.style.display = 'block';
+    feedback.innerHTML = "";
+    
 }
 
-//score 
-function correct(){
-    score += 1
-}
+
 //finish div hide question and display end
 function finish(){
     ask.style.display = 'none';
     end.style.display = 'block';
+    playerInput.focus();
+    save.disabled = true;
     mark.textContent = score;
+
+        
 }
+//store score to local storage
+const rank =JSON.parse(localStorage.getItem("highscore")) || [];
+function highscore(){
+    
+    const lastscore = {
+        pname:  playerInput.value.trim(),
+        pscore: score,
+    };
 
-function save(){
-
+    rank.push(lastscore);
+    console.log(rank);
+    rank.sort((a,b)=> b.pscore - a.pscore);
+    rank.splice(5);
+    localStorage.setItem("highscore",JSON.stringify(rank));
+    startbtn.disabled = false;
+    end.style.display = 'none';
+    hscore.style.display = 'block';
+    topscore();
+}
+//disable save button if text input == ""
+function validate(){
+    if(playerInput.value === ""){
+        save.disabled = true;
+    }else{
+        save.disabled=false;
+    }
+}
+//populate top 5 scorers
+function topscore(){
+    document.getElementById("topscore").innerHTML = "";
+    for(l=0;l<rank.length;l++){
+    var li = document.createElement("li");
+    li.innerHTML = rank[l].pname + " scored " + rank[l].pscore;
+    document.getElementById("topscore").appendChild(li);
+    }
+    
 }
 //Timer
 
@@ -124,3 +165,13 @@ function save(){
 //     }, 1000);    
 // start();
 // })
+
+//score 
+// function correct(){
+//     score += 1
+// }
+
+//time penalty
+// function deduct(){
+//     num1 -= 5;
+// }
