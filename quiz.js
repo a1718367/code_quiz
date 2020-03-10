@@ -45,7 +45,7 @@ b.addEventListener("click",function(){pick = 1;chkans(pick,i);i+=1;populate(i)})
 c.addEventListener("click",function(){pick = 2;chkans(pick,i);i+=1;populate(i)});
 d.addEventListener("click",function(){pick = 3;chkans(pick,i);i+=1;populate(i)});
 save.addEventListener("click",function(){highscore()});
-del.addEventListener("click",function(){localStorage.clear("highscore")});
+del.addEventListener("click",function(){localStorage.clear("highscore");location.reload()});
        
 //evaluate response - 
 function chkans(pick,i){
