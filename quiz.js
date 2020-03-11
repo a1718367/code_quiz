@@ -45,7 +45,7 @@ b.addEventListener("click",function(){pick = 1;chkans(pick,i);i+=1;populate(i)})
 c.addEventListener("click",function(){pick = 2;chkans(pick,i);i+=1;populate(i)});
 d.addEventListener("click",function(){pick = 3;chkans(pick,i);i+=1;populate(i)});
 save.addEventListener("click",function(){highscore()});
-del.addEventListener("click",function(){localStorage.clear("highscore");location.reload()});
+del.addEventListener("click",function(){localStorage.clear("highscore");delrank()});
        
 //evaluate response - 
 function chkans(pick,i){
@@ -112,7 +112,7 @@ function finish(){
         
 }
 //store score to local storage
-const rank =JSON.parse(localStorage.getItem("highscore")) || [];
+var rank =JSON.parse(localStorage.getItem("highscore")) || [];
 function highscore(){
     
     const lastscore = {
@@ -147,6 +147,11 @@ function topscore(){
     document.getElementById("topscore").appendChild(li);
     }
     
+}
+
+function delrank(){
+    rank = [];
+    console.log(rank)
 }
 //Timer
 
