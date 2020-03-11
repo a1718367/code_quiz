@@ -151,6 +151,7 @@ function topscore(){
 
 function delrank(){
     rank = [];
+    document.getElementById("topscore").innerHTML = "";
     console.log(rank)
 }
 //Timer
