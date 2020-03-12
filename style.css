@@ -6,18 +6,28 @@
 }
 
 .container{
-    /*margin-top: 1%;
-    margin-bottom: 1%;*/
     width: 100%;
-    padding: 1em;
-    /*min-height: 20px;*/
+    padding-top: 1em;
+    padding-bottom: 1em;
+    
+}
+#feedback{
+    margin-left: 1em;
+    padding-top: 0%;
+    color: white;
     
 }
 
+#topscore{
+    font-size: large;
+    color: green;
 
+}
 
 .btn{
-    margin-top: 2%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+
 }
 
 footer{

@@ -36,7 +36,7 @@ var q = [
 
 var i = 0
 var score = 0
-var num1 = 60;
+//var num1 = 80;
 populate(i);
 
     
@@ -47,14 +47,15 @@ d.addEventListener("click",function(){pick = 3;chkans(pick,i);i+=1;populate(i)})
 save.addEventListener("click",function(){highscore()});
 del.addEventListener("click",function(){localStorage.clear("highscore");delrank()});
        
-//evaluate response - 
+//evaluate response
 function chkans(pick,i){
 if(i<q.length){
 var pickans = q[i].choise[pick];
-if(pickans == q[i].ans){score +=1 ;feedback.textContent = "Correct";}else{num1 -= 5;feedback.textContent = "Wrong"}
+if(pickans == q[i].ans){score +=1 ;feedback.textContent = "Correct"; feedback.style.backgroundColor = "blue"}
+else{num1 -= 5;feedback.textContent = "Wrong";feedback.style.backgroundColor = "red"}
 }else{return}}
 
-//populate question & options
+//populate question & options - i+ when button is pressed and load questions and options based on q array index
 function populate(j){
     if(j<q.length){
     document.getElementById("question").textContent = q[j].question;
@@ -78,7 +79,7 @@ startbtn.addEventListener("click", function(){
         timedisp.textContent = num1;
     }else{
         clearInterval(x);
-        timedisp.textContent == 0;
+        timedisp.textContent = 0;
         finish();
     }
 },1000);
@@ -148,11 +149,11 @@ function topscore(){
     }
     
 }
-
+//remove score ranking from local storage
 function delrank(){
     rank = [];
     document.getElementById("topscore").innerHTML = "";
-    console.log(rank)
+
 }
 //Timer
 
